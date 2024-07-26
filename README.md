@@ -1,21 +1,16 @@
-# Smart PDF Chat Using RAG and Amazon Bedrock
+### Smart PDF Chat Using RAG and Amazon Bedrock
 
-This project is an AI chatbot that allows users to upload their documents and chat with the document, powered by RAG and Amazon Bedrock
+This project creates an AI chatbot that allows users to upload text documents which are stored and converted into vector embedding through the Bedrock model and stored in s3, when you ask questions it is converted to embedding and compared to the chunk of text in your s3 data.
 
 ### **Technologies Used**
 - Amazon Bedrock
 - Amazon S3
 - Docker
-
-### Keywords
 - FAISS
 - RAG
 - LangChain
-- Streamlit
 
 ## Architecture
-
-![Architecture Diagram](https://github.com/Dom7k/Smart-PDF-Chat-Using-RAG-and-Bedrock/blob/main/images/Architecture%20diagram.gif)
 
 1. **Document Chunking**: The uploaded document is broken up into manageable chunks of text.
 2. **Vector Embedding**: Each chunk is converted to FAISS vectors using Amazon Titan Embeddings.
@@ -78,7 +73,7 @@ aws configure
 ### Backend
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Dom7k/Smart-PDF-Chat-Using-RAG-and-Bedrock.git
+git clone https://github.com/willie191998/AI-PDF-Chat-Using-RAG-and-Bedrock/tree/main
 ```
 
 2. **Navigate to the admin directory**
@@ -104,7 +99,7 @@ cd ../user
 
 2. **Build the Docker image**
 ```bash
-docker build -t pdf-reader-client .
+docker build -t pdf-reader-client.
 ````
 
 3. **Run the Docker container on port `8084`**
@@ -113,12 +108,4 @@ docker run -d -e BUCKET_NAME=bedrock-chatbot-pdf -v ~/.aws:/root/.aws -p 8084:80
 ```
 
 ## Screenshots
-
-### Admin page / Upload document
-![Architecture Diagram](https://github.com/Dom7k/Smart-PDF-Chat-Using-RAG-and-Bedrock/blob/main/images/upload.png)
-
-### User page / Chat with document
-![Architecture Diagram](https://github.com/Dom7k/Smart-PDF-Chat-Using-RAG-and-Bedrock/blob/main/images/chat.png)
-
-### When you ask any question out of context, you do not get any answer
-![Architecture Diagram](https://github.com/Dom7k/Smart-PDF-Chat-Using-RAG-and-Bedrock/blob/main/images/chat2.png)
+Check out the images folder for the screenshot of the output response.
